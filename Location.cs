@@ -8,8 +8,13 @@ namespace Lagerstyring
 {
     public class Location
     {
-        private int LocationID { get; }
-        private string Name { get; set; }
-        private string Description { get; set; }
+        public int LocationID { get; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public Location ( string name, string description) 
+        {
+            Name = name;
+            Description = description;
+        }
     }
 }

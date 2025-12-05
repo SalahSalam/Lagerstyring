@@ -8,9 +8,15 @@ namespace Lagerstyring
 {
     public class Orderline
     {
-        private int OrderLineID { get; }
-        private int OrderID { get; }
-        private int ProductID { get; }
-        private int Quantity { get; set; }
+        public int OrderLineID { get; }
+        public int OrderID { get; }
+        public int ProductID { get; }
+        public int Quantity { get; set; }
+        public Orderline(int orderID, int productID, int quantity)
+        {
+            OrderID = orderID;
+            ProductID = productID;
+            Quantity = quantity;
+        }
     }
 }

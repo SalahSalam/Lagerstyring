@@ -8,11 +8,25 @@ namespace Lagerstyring
 {
     public class Productmovement
     {
-        private int Movementid { get; }
-        private int Productid { get; set; }
-        private int Userid { get; set; }
-        private int Quantity { get; set; }
-        private Type Movementtype { get; set; }
-        private DateTime Timestamp { get; set; }
+        public int Movementid { get; }
+        public int Productid { get; }
+        public int Userid { get; }
+        public int Quantity { get; set; }
+        public  Movementtype Type { get; set; }
+        public DateTime Timestamp { get; set; }
+        public Productmovement( int  productid, int userid, int quantity, Movementtype type, DateTime timestamp )
+        {
+            Productid = productid;
+            Userid = userid;
+            Quantity = quantity;
+            Type = type;
+            Timestamp = timestamp;
+        }
+        public enum Movementtype
+        {
+            In,
+            Out,
+            Correction
+        }
     }
 }
