@@ -5,28 +5,36 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lagerstyring
+namespace Lagerstyring.Domain.Entities
 {
     public class Inventoryitem
     {
+        private int expectedQuantity;
+
         public int InventoryItemID { get; }
         public int ProductID { get; }
         public int LocationID { get; }
         public int Quantity { get; set; }
         public DateTime LastUpdated { get; set; }
 
-        public Inventoryitem(int inventoryItemID, int productID, int locationID, int quantity, DateTime lastupdated) 
+        public Inventoryitem(int inventoryItemID, int productID, int locationID, int quantity, DateTime lastupdated)
         {
             InventoryItemID = inventoryItemID;
             ProductID = productID;
             LocationID = locationID;
             Quantity = quantity;
             LastUpdated = lastupdated;
-            if (quantity < 0) 
+            if (quantity < 0)
             {
                 throw new ArgumentException("Quantity cannot be negative.");
             }
         }
+
+        public Inventoryitem(int expectedQuantity)
+        {
+            this.expectedQuantity = expectedQuantity;
+        }
+
         public void UpdateQuantity(int value)
         {
             if (Quantity + value < 0)

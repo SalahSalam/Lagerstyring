@@ -4,30 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lagerstyring
+namespace Lagerstyring.Domain.Entities
 {
     public class Order
     {
         public readonly List<Orderline> _orderlines = new List<Orderline>();
-        public int OrderID { get;  }
-        public  DateTime CreatedAt { get; set; }
+        public int OrderID { get; }
+        public DateTime CreatedAt { get; set; }
         public OrderStatus Status { get; set; }
 
-        public  enum OrderStatus
+        public enum OrderStatus
         {
             Open,
             Closed,
             Sent
         }
 
-        public Order() 
+        public Order()
         {
             CreatedAt = DateTime.Now;
             Status = OrderStatus.Open;
         }
-        public void Addorderline(int ProductID,int Quantity) 
+        public void Addorderline(int ProductID, int Quantity)
         {
-            if (Quantity <= 0) 
+            if (Quantity <= 0)
             {
                 throw new ArgumentException("Quantity must be positive");
             }

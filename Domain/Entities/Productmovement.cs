@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lagerstyring
+namespace Lagerstyring.Domain.Entities
 {
     public class Productmovement
     {
@@ -12,9 +12,9 @@ namespace Lagerstyring
         public int Productid { get; }
         public int Userid { get; }
         public int Quantity { get; set; }
-        public  Movementtype Type { get; set; }
+        public Movementtype Type { get; set; }
         public DateTime Timestamp { get; set; }
-        public Productmovement( int  productid, int userid, int quantity, Movementtype type, DateTime timestamp )
+        public Productmovement(int productid, int userid, int quantity, Movementtype type, DateTime timestamp)
         {
             Productid = productid;
             Userid = userid;

@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lagerstyring
+namespace Lagerstyring.Domain.Entities
 {
     public class Location
     {
         public int LocationID { get; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public Location ( string name, string description) 
+        public Location(string name, string description)
         {
             Name = name;
             Description = description;

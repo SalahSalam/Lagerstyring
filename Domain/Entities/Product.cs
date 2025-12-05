@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lagerstyring
+namespace Lagerstyring.Domain.Entities
 {
     public class Product
     {
@@ -21,7 +21,7 @@ namespace Lagerstyring
             Description = description;
             Category = category;
             Price = price;
-           
+
             if (minimumstock < 0)
             {
                 throw new ArgumentException("Minimum stock cannot be negative.");
