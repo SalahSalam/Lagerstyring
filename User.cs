@@ -9,8 +9,13 @@ namespace Lagerstyring
 {
     public class User
     {
-        private int Id { get; }
-        private string Name { get; set; }
-        private string Role { get; set; }
+        public int Id { get; }
+        public string Name { get; set; }
+        public string Role { get; set; }
+        public User(string name, string role)
+        {
+            Name = name;
+            Role = role;
+        }
     }
 }
